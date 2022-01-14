@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #333333;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="2" column="0">
+       <widget class="QPlainTextEdit" name="input_text">
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #444444;
+color: #eeeeee;</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPlainTextEdit" name="output_text">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: #444444;
+color: #eeeeee;</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="styleSheet">
+         <string notr="true">color: #eeeeee;</string>
+        </property>
+        <property name="text">
+         <string>Поле для ввода текста</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QLabel" name="label_2">
+        <property name="styleSheet">
+         <string notr="true">color: #eeeeee;</string>
+        </property>
+        <property name="text">
+         <string>Поле вывода текста</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="3">
+       <widget class="QPushButton" name="pushButton">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+QPushButton{
+	border-radius: 10px;
+	background-color: #fb5d5d;
+	color: #ffffff;
+}
+
+ QPushButton:pressed { 
+     background-color: #f95d5d;
+ }</string>
+        </property>
+        <property name="text">
+         <string>Кодировать</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="Line" name="line">
+        <property name="styleSheet">
+         <string notr="true">background-color: #111111;</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="3">
+       <widget class="Line" name="line_2">
+        <property name="styleSheet">
+         <string notr="true">background-color: #111111;</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="Line" name="line_3">
+        <property name="styleSheet">
+         <string notr="true">background-color: #111111;</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QMenuBar {
+	background-color: #444444;
+	color: #ffffff;
+}
+
+QMenuBar:item:selected {
+	background-color: #555555;
+	color: #ffffff;
+}</string>
+   </property>
+   <widget class="QMenu" name="mode_menu">
+    <property name="styleSheet">
+     <string notr="true"> QMenu {
+     background-color: #666666;
+     border: 1px solid black;
+ }
+
+ QMenu:item {
+     background-color: transparent;
+	 color: #ffffff;
+ }
+
+ QMenu:item:selected { 
+     background-color: #777777;
+ }</string>
+    </property>
+    <property name="title">
+     <string>Режим</string>
+    </property>
+    <addaction name="code"/>
+    <addaction name="decode"/>
+   </widget>
+   <widget class="QMenu" name="help_menu">
+    <property name="styleSheet">
+     <string notr="true"> QMenu {
+     background-color: #666666;
+     border: 1px solid black;
+ }
+
+ QMenu:item {
+     background-color: transparent;
+	 color: #ffffff;
+ }
+
+ QMenu:item:selected { 
+     background-color: #777777;
+ }</string>
+    </property>
+    <property name="title">
+     <string>Помощь</string>
+    </property>
+    <addaction name="help"/>
+   </widget>
+   <addaction name="mode_menu"/>
+   <addaction name="help_menu"/>
+  </widget>
+  <action name="code">
+   <property name="text">
+    <string>Кодирование</string>
+   </property>
+  </action>
+  <action name="decode">
+   <property name="text">
+    <string>Декодирование</string>
+   </property>
+  </action>
+  <action name="help">
+   <property name="text">
+    <string>Помощь</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
